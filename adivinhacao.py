@@ -62,5 +62,5 @@ def jogar():
         pontos = pontos - pontos_perdidos
         rodada = rodada + 1
 
-
-jogar()
+if(__name__== "__main__"):
+    jogar()
