@@ -2,6 +2,7 @@ import random
 
 
 def jogar():
+    print("Bem vindo ao Jogo da Adivinhação")
     numero_secreto = random.randrange(1, 101)
 
     total_de_tentativas = 0
@@ -60,3 +61,6 @@ def jogar():
         # subtraindo os pontos perdidos da pontuação total
         pontos = pontos - pontos_perdidos
         rodada = rodada + 1
+
+
+jogar()
