@@ -46,17 +46,10 @@ while(rodada <= total_de_tentativas):
     else:
         if(menor):
             print("Você errou! Chute menor que o número secreto!")
-            if(rodada == total_de_tentativas):
-                print("O número secreto era {}. Você fez {} ".format(
-                    numero_secreto, pontos))
+
         elif(maior):
             print(" Você errou! Chute maior que o número secreto!")
-            if(rodada == total_de_tentativas):
-                print("O número secreto era {}. Você fez {} ".format(
-                    numero_secreto, pontos))
-                
-    # Pontos perdidos da rodada
+
     pontos_perdidos = abs(numero_secreto - chute)
-    # subtraindo os pontos perdidos da pontuação total
     pontos = pontos - pontos_perdidos
     rodada = rodada + 1
