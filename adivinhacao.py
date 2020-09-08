@@ -1,17 +1,47 @@
+import random
 print('Bem vindo ao jogo de Advinhação!')
 
-numero_secreto = 42
+numero_secreto = random.randrange(1, 101)
 
-chute_str = input("Digite seu numero: ")
-#O python lê o valor como string, sendo necessário converter para inteiro, caso contrário a verificação abaixo
-#sempre será falsa
+total_de_tentativas = 0
+rodada = 1
 
-print("Você digitou ", chute_str)
-chute= int(chute_str)
+print("Qual o nível de dificuldade?")
+print(" 1- Fácil 2- Médio 3- Difícil")
 
-if(numero_secreto == chute) :
-    print("Você acertou!")
+nivel = int(input("Escolha o nível:"))
+while(nivel < 1 or nivel > 3):
+    print("Qual o nível de dificuldade?")
+    print(" 1- Fácil 2- Médio 3- Difícil")
+    nivel = int(input("Escolha o nível:"))
+
+
+if(nivel == 1):
+    total_de_tentativas = 20
+
+elif(nivel == 2):
+    total_de_tentativas = 10
 else:
-    print("Você errou!")
+    total_de_tentativas = 5
 
-print("Fim de jogo!")
+while(rodada <= total_de_tentativas):
+    print("Tentativa {} de {}".format(rodada, total_de_tentativas))
+    chute_str = input("Digite um número de 1 a 100: ")
+
+    print("Você digitou ", chute_str)
+    chute = int(chute_str)
+
+    if(chute < 1 or chute > 100):
+        print("Você deve digitar um número entre 1 e 100!")
+        continue
+    acertou = numero_secreto == chute
+    menor = chute < numero_secreto
+    if(acertou):
+        print("Você acertou!")
+        break
+    else:
+        if(menor):
+            print("Você errou! Chute menor que o número secreto!")
+        else:
+            print(" Você errou! Chute maior que o número secreto!")
+    rodada = rodada + 1
