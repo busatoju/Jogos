@@ -9,7 +9,6 @@ Amora
 Laranja
 limao
 uva
-Açai
 ameixa
 Caju
 Caja
